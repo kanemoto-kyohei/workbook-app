@@ -1,0 +1,35 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+use App\Models\User;
+
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Workbook>
+ */
+class WorkbookFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        $user = User::factory()->create();
+
+
+        return [
+            //
+            'id'=>fake()->randomNumber(1),
+            'user_id'=>$user->id,
+            'workbook_id'=>Str::random(32),
+            'title'=>Str::random(32),
+            'is_public'=>false
+
+        ];
+    }
+}
