@@ -26,7 +26,7 @@ class UserController extends Controller
         $workbook->title = $request->input('title');
         $workbook->user_id = $user_id;
         $workbook->workbook_id = Uuid::uuid4()->toString();
-        //同じユーザが同じタイトルの問題をつけようとしたらエラーが出るように
+        //同じユーザが同じタイトルの問題をつけようとしたらエラーが出るようにする
         $is_workbook = Workbook::where('user_id',$user_id)
         ->where('title',$workbook->title)
         ->exists();
