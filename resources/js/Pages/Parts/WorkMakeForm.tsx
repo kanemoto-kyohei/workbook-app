@@ -266,7 +266,7 @@ const WorkMakeForm = ({id,workbook_id,question,options,answer,description,time_t
             onClick={addSubmit}>追加</PrimaryButton>
             }
 
-            {isGoodForm && is_update &&
+            {is_update &&
             <PrimaryButton
             data-testid="update-button" 
             className='mb-5'

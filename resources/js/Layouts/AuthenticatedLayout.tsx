@@ -140,8 +140,9 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                         </div>
 
                         <div className="mt-3 space-y-1">
+                            <ResponsiveNavLink href={route('top')}>トップ画面へ<HomeIcon fontSize='small'/></ResponsiveNavLink>
                             <ResponsiveNavLink href={route('profile.edit')}>アカウント情報</ResponsiveNavLink>
-                            <ResponsiveNavLink method="get" href={route('query')} >お問い合わせ</ResponsiveNavLink>
+                            <ResponsiveNavLink method="get" href={route('query')} >お問い合わせ<EmailIcon fontSize='small'/></ResponsiveNavLink>
                             <ResponsiveNavLink href={route('terms')}>利用規約</ResponsiveNavLink>
                             <ResponsiveNavLink href={route('privacy.policy')}>プライバシーポリシー</ResponsiveNavLink>
                             <ResponsiveNavLink method="post" href={route('logout')} as="button">

@@ -52,7 +52,6 @@ const WorkSolveForm = ({works,is_public}:{is_public:boolean} & { works: Works[] 
         setData('result', correctNum+1);
         correctSound.play();
     }else if(i != work.answer && isButtonClick){
-        incorrectSound.play();
         myVoice.play();
     }
     setIsButtonClick(false);
