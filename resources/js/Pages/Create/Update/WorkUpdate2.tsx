@@ -3,7 +3,6 @@ import type { Workbooks } from '@/types/workbooks';
 import type { Work } from '@/types/works';
 import Select from "react-select";
 import PrimaryButton from "@/Components/PrimaryButton";
-import {Options} from "@/Pages/Parts/Options";
 import { usePage,useForm } from '@inertiajs/react';
 import { useState } from 'react';
 

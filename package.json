@@ -39,13 +39,11 @@
         "@mui/icons-material": "^5.11.16",
         "@mui/material": "^5.13.4",
         "@nivo/line": "^0.83.0",
-        "@react-three/fiber": "^8.13.3",
         "aos": "^2.3.4",
         "framer-motion": "^10.12.16",
         "framer-motion-3d": "^10.12.16",
         "react-icons": "^4.10.1",
         "react-progress-bar-timer": "^0.3.4",
-        "react-select": "^5.7.3",
-        "three": "^0.153.0"
+        "react-select": "^5.7.3"
     }
 }

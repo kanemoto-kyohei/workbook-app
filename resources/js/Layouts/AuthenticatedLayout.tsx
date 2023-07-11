@@ -7,7 +7,6 @@ import { Link } from '@inertiajs/react';
 import { User } from '@/types';
 import HomeIcon from '@mui/icons-material/Home';
 import EmailIcon from '@mui/icons-material/Email';
-import NavButton from '@/Components/NavButton';
 
 export default function Authenticated({ user, header, children }: PropsWithChildren<{ user: User, header?: ReactNode }>) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);

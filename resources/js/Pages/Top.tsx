@@ -5,7 +5,6 @@ import {FadeinButton} from "@/Pages/Parts/Animation/FadeinButton";
 import { Head,Link } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import React, { ReactNode, useState } from 'react';
-import { ThreeDementionButton } from '@/Pages/Parts/Animation/ThreeDementionButton';  
 import Loading from './Parts/Loading';
 import { Workbooks } from '@/types/workbooks';
 
