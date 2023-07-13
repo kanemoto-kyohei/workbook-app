@@ -1,4 +1,4 @@
-import { useEffect, FormEventHandler } from 'react';
+import { useEffect, FormEventHandler, useState } from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import BasicLayout from '@/Layouts/BasicLayout';
 import InputError from '@/Components/InputError';
@@ -8,8 +8,12 @@ import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
 import  TextField  from '@mui/material/TextField';
 import Checkbox from '@/Components/Checkbox';
+import { Button } from '@mui/material';
+import Modal from '@/Components/Modal';
+import Terms from '../Policies/Terms';
 
 export default function Register() {
+    const [showModal,setShowModal] = useState(false);
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         nickname:'',
@@ -31,6 +35,21 @@ export default function Register() {
 
         post(route('register'));
     };
+
+    const handleClick = () => {
+        setShowModal(true);
+    };
+    
+    const handleModalClose = () => {
+        setShowModal(false);
+    };
+
+    const renderModalContent = () => {
+           return <Terms/>
+    }
+
+
+
 
     return (
         <BasicLayout>
@@ -140,13 +159,21 @@ export default function Register() {
                 </div>
 
                 <div className="flex items-center justify-center">
-                    <Link
-                        href={route('terms')}
-                        className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+                    <Button
+                    onClick = {handleClick}
                     >
                         利用規約を開く
-                    </Link>
+                    </Button>
                 </div>
+
+                {showModal && (
+                <Modal 
+                show={true}
+                onClose={handleModalClose}>
+                {renderModalContent()}
+                </Modal>
+               )}
+
 
                 <div className="block mt-4">
                     <label className="flex items-center justify-center">

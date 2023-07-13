@@ -70,6 +70,7 @@ class PublicController extends Controller
         $workbooks = Workbook::where('is_public',true)
                                 ->with('user')
                                 ->with('public_result')
+                                ->orderBy('updated_at','DESC')
                                 ->get();
         
         return Inertia::render('Public/DisplayPublic',[

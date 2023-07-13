@@ -8,9 +8,9 @@ import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import  TextField  from '@mui/material/TextField';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
+import InputLabel from "@/Components/InputLabel";
 
 
 
@@ -117,12 +117,20 @@ const WorkMakeForm = ({id,workbook_id,question,options,answer,description,time_t
             <div className='flex justify-center mt-8'>
             <form onSubmit={submit}>
 
+            <InputLabel
+                className="mt-2"
+                value="①問題文を入力してください（必須）"
+                htmlFor='question'
+                style={{fontFamily:'Kaisei Decol'}}
+            />
+
+
             <TextField
             className='w-80'
             multiline
             margin="normal"
             rows={4}
-            variant="outlined"
+            variant="filled"
             label="問題文を入力"
             id = "question"
             name = "question"
@@ -137,13 +145,24 @@ const WorkMakeForm = ({id,workbook_id,question,options,answer,description,time_t
 
 
             <div className='flex flex-col mt-5'>
+            <InputLabel
+                className="mt-2"
+                value="②選択肢を追加してください（必須）"
+                htmlFor='question'
+                style={{fontFamily:'Kaisei Decol'}}
+            />
+ 
             {optionArray.map((option,index)=>(
             <>
-            <div key={index + 1} className="mt-2">{index + 1}</div>
+            <div 
+            key={index + 1} 
+            className="mt-2"
+            style={{fontFamily:'Kaisei Decol'}}
+            >{`${index + 1}つめ`}</div>
             <TextField
                 multiline
                 rows={4}
-                variant="outlined"
+                variant="filled"
                 label="選択肢を入力"
                 className="my-3"
                 key = {index}
@@ -184,7 +203,12 @@ const WorkMakeForm = ({id,workbook_id,question,options,answer,description,time_t
 
         <div>
         <FormControl sx={{ m: 1, minWidth: 120, mt:3 }}>
-        <InputLabel id="demo-simple-select-helper-label">{is_update ? answer : '正解番号'}</InputLabel>
+        <InputLabel 
+            className="my-3"
+            value="③正解番号を選択してください（必須）"
+            htmlFor='question'
+            style={{fontFamily:'Kaisei Decol'}}
+        >{is_update ? answer : '正解番号'}</InputLabel>
         <Select
             value = {selectedAnswer}
             name = 'answer'
@@ -204,11 +228,18 @@ const WorkMakeForm = ({id,workbook_id,question,options,answer,description,time_t
         </div>
 
         <div className='mt-5'>
+        <InputLabel
+                className="my-3"
+                value="④解説を入力してください"
+                htmlFor='question'
+                style={{fontFamily:'Kaisei Decol'}}
+            />
+
         <TextField
             className='mt-5 w-full'
             multiline
             rows={4}
-            variant="outlined"
+            variant="filled"
             label="解説を入力"
             id = "description"
             name = "description"
@@ -219,7 +250,12 @@ const WorkMakeForm = ({id,workbook_id,question,options,answer,description,time_t
             </div>
             <div>
             <FormControl sx={{ m: 1, minWidth: 120, mt:3 }}>
-            <InputLabel id="demo-simple-select-helper-label">{is_update ? time_to_solve : '制限時間'}</InputLabel>
+                    <InputLabel 
+                    className="my-3"
+                    value="⑤制限時間を選択してください"
+                    htmlFor='question'
+                    style={{fontFamily:'Kaisei Decol'}}
+        >{is_update ? time_to_solve : '制限時間'}</InputLabel>
              <div className='flex items-center mb-5'>
              <Select
              value = {selectedTime}

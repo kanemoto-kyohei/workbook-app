@@ -26,12 +26,12 @@ const SquareCard = styled(Card)`
 `;
 
 
-export default function BasicCard({value,imgURL}:{value:string,imgURL:string}) {
+export default function BasicCard({value,sub,imgURL}:{value:string,sub:string,imgURL:string}) {
   return (
     <SquareCard 
     sx={{
-       minWidth: { xs:130,sm:150,md:160,lg:200,xl:220 },
-       height: { xs:130,sm:150,md:160,lg:200,xl:220 }
+       minWidth: { xs:130,sm:150,md:160,lg:200,xl:210 },
+       height: { xs:130,sm:150,md:160,lg:200,xl:210 }
        }}>
       <CardContent>
         <Typography
@@ -41,6 +41,13 @@ export default function BasicCard({value,imgURL}:{value:string,imgURL:string}) {
         fontWeight:'bold',
         color:'#D2B48C'}}>
           {value}
+        </Typography>
+        <Typography
+        sx={{
+        fontFamily:'Kaisei Decol',
+        fontSize:10,
+        color:'#8B4513'}}>
+          {sub}
         </Typography>
         <Typography>
         <img src={imgURL} alt="Image" />        

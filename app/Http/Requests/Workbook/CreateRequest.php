@@ -26,7 +26,9 @@ class CreateRequest extends FormRequest
             'question' => 'required|string|max:2000',
             'options' => 'array|min:2',
             'options.*'=> 'string|max:2000',
-            'answer' => 'required|numeric'
+            'answer' => 'required|numeric',
+            'description' => 'max:2000'
+
 
         ];
     }

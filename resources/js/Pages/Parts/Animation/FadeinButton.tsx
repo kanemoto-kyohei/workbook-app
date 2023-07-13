@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import PrimaryButton from "@/Components/PrimaryButton";
 import BasicCard from "@/Pages/Parts/BasicCard";
 
-export const FadeinButton = ({value,imgURL,onClick}:{ value:string,imgURL:string,onClick?: () => void }) => {
+export const FadeinButton = ({value,sub,imgURL,onClick}:{ value:string,sub:string,imgURL:string,onClick?: () => void }) => {
   const handleClick = () => {
     if(onClick){
     onClick();
@@ -23,7 +23,8 @@ return(
     >
    <BasicCard 
    value={value}
-   imgURL={imgURL}/>
+   imgURL={imgURL}
+   sub={sub}/>
   </motion.div >
   </div>
 )

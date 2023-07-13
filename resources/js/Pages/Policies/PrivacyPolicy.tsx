@@ -9,6 +9,15 @@ const PrivacyPolicy = ({auth}:Workbooks) =>{
         header={<h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Dashboard</h2>}
         >
             <BasicLayout>
+            <div 
+                className='p-10' 
+                style={{ 
+                    fontFamily:'Kaisei Decol',
+                    overflowY: 'auto', // Vertical scrolling
+                    maxHeight: '80vh', // This is an example value, you can set it to your needs
+                }}
+            >
+
                 <div className='p-10' style={{fontFamily:'Kaisei Decol'}}>
             <div>【プライバシーポリシー】</div>
                 <div className='m-2'>1.取得する個人情報</div>
@@ -38,6 +47,7 @@ const PrivacyPolicy = ({auth}:Workbooks) =>{
             <div>当サービスは、未成年者から個人情報を意図的に取得することはありません。未成年者が個人情報を提供する場合は、保護者の同意を得るようお願いします。</div>
             <div className='m-2'>7.プライバシーポリシーの変更</div>
             <div>当サービスは、プライバシーポリシーを必要に応じて改定する場合があります。重要な変更がある場合は、利用者に通知することがあります。</div>
+            </div>
             </div>
             </BasicLayout>
         </AuthenticatedLayout>

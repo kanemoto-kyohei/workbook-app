@@ -1,9 +1,17 @@
 import BasicLayout from '@/Layouts/BasicLayout';
 import { Workbooks } from '@/types/workbooks';
 
-const Terms = ({auth}:Workbooks) =>{
+const Terms = () =>{
     return(
-            <BasicLayout>
+            <>
+                <div 
+                className='p-10' 
+                style={{ 
+                    fontFamily:'Kaisei Decol',
+                    overflowY: 'auto', // Vertical scrolling
+                    maxHeight: '80vh', // This is an example value, you can set it to your needs
+                }}
+            >
                 <div className='p-10' style={{fontFamily:'Kaisei Decol'}}>
                 <div>利用規約</div>
                 <div className='mt-5'>
@@ -37,7 +45,8 @@ const Terms = ({auth}:Workbooks) =>{
                 <div>6.1 本規約は、日本法に準拠し解釈されます。</div>
                 <div>6.2 本規約に定めのない事項や疑義が生じた場合は、運営者の裁量により判断されます。</div>
                 </div>
-            </BasicLayout>
+                </div>
+            </>
     )
 }
 

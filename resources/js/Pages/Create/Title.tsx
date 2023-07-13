@@ -57,10 +57,12 @@ const Title = ({auth,flash}:PageProps) => {
                         className="mt-2"
                         htmlFor="permalink"
                         value="問題集のタイトル"
+                        style={{fontFamily:'Kaisei Decol'}}
                     />
 
                     <TextField
                     id="title"
+                    rows={1}
                     type="title"
                     name="title"
                     value={data.title}
@@ -68,7 +70,7 @@ const Title = ({auth,flash}:PageProps) => {
                     autoComplete="titlename"
                     onChange={(e: { target: { value: string; }; }) => setData("title", e.target.value)}
                     defaultValue="タイトル"
-                    helperText="タイトルを記入してください."
+                    helperText="問題集のタイトルを記入してください."
                     variant="filled"
                     required
                         />
