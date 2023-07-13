@@ -18,6 +18,9 @@
 
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+<!-- favicon -->
+<link rel="icon" href="{{ asset('logo.ico') }}" type="image/x-icon"/>
+
         <!-- Scripts -->
         @routes
         @viteReactRefresh
