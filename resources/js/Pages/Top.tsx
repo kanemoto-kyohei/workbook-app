@@ -38,8 +38,7 @@ export default function Top({ auth,flash }: Workbooks) {
             <div className='scale-100 p-6 flex motion-safe:hover:scale-[1.01] transition-all justify-end '>
             <FadeinButton
             onClick={handleClick}
-            value='作る'
-            sub='問題を作成、編集、公開する'
+            value='問題を作る'
             imgURL = '/images/create.png'
             />
             </div>
@@ -47,8 +46,7 @@ export default function Top({ auth,flash }: Workbooks) {
             <Link
             href={route('workbook.select')}>
             <FadeinButton
-            value='解く'
-            sub='作成した問題を解いてみる'
+            value='作った問題を解く'
             imgURL = '/images/solve.png'
             />
             </Link>
@@ -57,8 +55,7 @@ export default function Top({ auth,flash }: Workbooks) {
             <Link
             href={route('display.public')}>
             <FadeinButton
-            value='見る'
-            sub='他のユーザが作った問題を覗いてみる'
+            value='シェアされた問題を見る'
             imgURL = '/images/public.png'
             />
             </Link>
@@ -67,8 +64,7 @@ export default function Top({ auth,flash }: Workbooks) {
             <Link
             href={route('workbook.analyse_display')}>
             <FadeinButton
-            value='分析する'
-            sub='解いた問題の成績を振り返る'
+            value='成績を振り返る'
             imgURL = '/images/analyse.png'
             />
             </Link>
@@ -86,8 +82,7 @@ export default function Top({ auth,flash }: Workbooks) {
             <Link
             href={route('title')}>
             <FadeinButton
-            value='作る'
-            sub='自分だけの問題を作成する'
+            value='問題を作る'
             imgURL = '/images/create.png'
             />
             </Link>
@@ -96,8 +91,7 @@ export default function Top({ auth,flash }: Workbooks) {
             <Link
             href={route('workbook.display')}>
             <FadeinButton
-            value='編集する'
-            sub='タイトルや内容を編集する'
+            value='問題を編集する'
             imgURL = '/images/edit.png'
             />
             </Link>
@@ -106,8 +100,7 @@ export default function Top({ auth,flash }: Workbooks) {
             <Link
             href={route('workbook.public')}>
             <FadeinButton
-            value='公開する'
-            sub='作成した問題を公開、非公開にする'
+            value='問題を公開する'
             imgURL = '/images/publicate.png'
             />
             </Link>

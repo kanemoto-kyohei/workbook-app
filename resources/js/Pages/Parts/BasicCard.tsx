@@ -26,7 +26,7 @@ const SquareCard = styled(Card)`
 `;
 
 
-export default function BasicCard({value,sub,imgURL}:{value:string,sub:string,imgURL:string}) {
+export default function BasicCard({value,sub,imgURL}:{value:string,sub?:string,imgURL:string}) {
   return (
     <SquareCard 
     sx={{
