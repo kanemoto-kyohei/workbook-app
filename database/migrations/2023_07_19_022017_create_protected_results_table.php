@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('protected_results', function (Blueprint $table) {
             $table->id();
             $table->string('workbook_id')->nullable(false);
-            $table->string('nickname')->nullable(false);
+            $table->string('nickname')->nullable(true);
             $table->integer('result');
             $table->timestamps();
 
