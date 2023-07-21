@@ -23,7 +23,7 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('top.layout');
 
 //terms
 Route::get('/policy/terms', function () {
@@ -144,10 +144,17 @@ Route::get('/how/to/use', function () {
     return Inertia::render('Policies/HowToUse');
 })->name('howtouse');
 
+//protected
+Route::get('/protected/solve/pre/start/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_pre_start']);
 
+Route::get('/protected/solve/start/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_start'])
+->name('protected.start');
 
+Route::post('/protected/solve/result/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_result'])
+->name('protected.result');
 
-
+Route::post('/protected/solve/result/ranking/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_ranking'])
+->name('protected.ranking');
 
 //default
 Route::get('/dashboard', function () {

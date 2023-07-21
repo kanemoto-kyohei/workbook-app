@@ -22,7 +22,6 @@ class WorkService{
 
     public function getWorks($workbook_id){
         $works = Work::where('workbook_id',$workbook_id)->get();
-
         return $works;
     }
 

@@ -12,6 +12,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Work } from '@/types/works';
 import FastForwardIcon from '@mui/icons-material/FastForward';
 import TimelineIcon from '@mui/icons-material/Timeline';
+import { useState } from 'react';
+import InsertLinkIcon from '@mui/icons-material/InsertLink';
 
 
 const StickCard = styled(Card)`
@@ -31,8 +33,10 @@ const StickCard = styled(Card)`
 
 
 
-export default function StickTypeCard({value,i,id,workbook_id,publicate,onClick,publicateClick}:
-  {value:string,i:number,id:number,workbook_id:string,publicate:string,onClick:()=>void,publicateClick:()=>void}) {
+export default function StickTypeCard({value,i,id,workbook_id,publicate,onClick,publicateClick,getLinkClick}:
+  {value:string,i:number,id:number,workbook_id:string,publicate:string,onClick:()=>void,publicateClick:()=>void,getLinkClick:()=>void}) {
+  const [getLink,setGetLink] = useState(false);
+
   const handleDeleteClick = () => {
     onClick();
   }
@@ -40,6 +44,12 @@ export default function StickTypeCard({value,i,id,workbook_id,publicate,onClick,
   const handlePublicateClick = () => {
     publicateClick();
   }
+
+  const handleGetLinkClick = () => {
+    getLinkClick();
+    setGetLink(true)
+  }
+
 
   
   function truncateText(value:string, maxLength:number) {
@@ -140,7 +150,7 @@ export default function StickTypeCard({value,i,id,workbook_id,publicate,onClick,
                 </Button>
         </div>}
 
-        {publicate == '公開する' && 
+        {publicate == 'このアプリに公開する' && 
         <div>
           <FastForwardIcon />
                 <Button
@@ -155,6 +165,30 @@ export default function StickTypeCard({value,i,id,workbook_id,publicate,onClick,
                 >{publicate}
                 </Button>
         </div>}
+                  
+        {getLink && publicate != 'null' && 
+        <div className='flex flex-row'><FastForwardIcon/><div
+        style = {{
+          color:'yellowgreen', 
+          textDecoration: 'underline',
+          minWidth:'120px',
+          fontFamily:'Kaisei Decol'}}
+        >リンクをコピーしました！</div></div>}
+
+        {!getLink && publicate != 'null' &&
+        <div><FastForwardIcon />
+        <Button
+        style = {{
+          color:'blue', 
+          textDecoration: 'underline',
+          minWidth:'120px',
+          fontFamily:'Kaisei Decol'}}
+        onClick={handleGetLinkClick}>共有リンクをコピーする</Button>
+        <InsertLinkIcon
+        style = {{
+          color:'blue', 
+          }}
+          /></div>}
 
 
       </CardContent>

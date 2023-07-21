@@ -10,7 +10,7 @@ import '@/Pages/Solve/workbookstyle.css'
 import BasicLayout from '@/Layouts/BasicLayout';
 
 
-const WorkSolveForm = ({works,is_public}:{is_public:boolean} & { works: Works[] }) => {
+const WorkSolveForm = ({works,is_public,is_protected}:{is_protected?:boolean} & {is_public:boolean} & { works: Works[] }) => {
     const [num,setNum] = useState(0);
     const [correctNum,setCorrectNum] = useState(0);
     const [isCorrect, setIsCorrect] = useState(false);
@@ -21,7 +21,6 @@ const WorkSolveForm = ({works,is_public}:{is_public:boolean} & { works: Works[] 
     const {post, setData} = useForm({
         result:correctNum,
     });
-
     const handleNextClick = ( works:Works[]) => {
         if(num+1<works.length){
         setNum(num+1);
@@ -32,6 +31,8 @@ const WorkSolveForm = ({works,is_public}:{is_public:boolean} & { works: Works[] 
 
         }else if(is_public){
         post(route("public.result",{workbook_id:work.workbook_id}))
+        }else if(is_protected){
+        post(route("protected.result",{workbook_id:work.workbook_id}))
         }else if(!is_public){
         post(route("workbook.result",{workbook_id:work.workbook_id}))   
         }
@@ -71,6 +72,8 @@ const WorkSolveForm = ({works,is_public}:{is_public:boolean} & { works: Works[] 
         e.preventDefault();
         if(is_public){
         post(route("public.result",{workbook_id:work.workbook_id}))}
+        else if(is_protected){
+        post(route("protected.result",{workbook_id:work.workbook_id}))}  
         else{
             post(route("workbook.result",{workbook_id:work.workbook_id}))}  
         }

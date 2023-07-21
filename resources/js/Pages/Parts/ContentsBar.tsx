@@ -6,8 +6,9 @@ import { Workbooks } from "@/types/workbooks";
 import { IconButton } from "@mui/material";
 
 
-export const ContentsBar = ({value,i,id,workbook_id,publicate,onClick,onDeleteClick,publicateClick}:
-  { value:string,i:number,id:number,workbook_id:string,publicate:string,onClick?: () => void,onDeleteClick?: () => void ,publicateClick?: () => void}) => {
+export const ContentsBar = ({value,i,id,workbook_id,publicate,onClick,onDeleteClick,publicateClick,getLinkClick}:
+  { value:string,i:number,id:number,workbook_id:string,publicate:string,
+    onClick?: () => void,onDeleteClick?: () => void ,publicateClick?: () => void, getLinkClick?: () => void}) => {
     const handleClick = () => {
         if(onClick){
         onClick();
@@ -25,6 +26,13 @@ export const ContentsBar = ({value,i,id,workbook_id,publicate,onClick,onDeleteCl
           publicateClick();
         }
       }
+
+      const onGetLinkClick = () => {
+        if(getLinkClick){
+          getLinkClick();
+        }
+      };
+
 
 
 return(
@@ -48,6 +56,8 @@ return(
    onClick={handleDeleteClick}
    publicateClick={onPublicateClick}
    publicate={publicate}
+   getLinkClick={onGetLinkClick}
+
    />
   </motion.div >
   </div>

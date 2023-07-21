@@ -38,6 +38,19 @@ const WorkbookDisplay = ({workbooks,auth,flash}:WorkbookArray & Workbooks & Publ
         setSelectedWork(null);
     };
 
+    async function handleGetLinkClick(workbook:Workbook) {
+        // この部分を適切なリンク形式に修正してください。
+        const textToCopy = `http://shareledge-72d491ceb1b6.herokuapp.com/protected/solve/pre/start/${workbook.workbook_id}`;
+    
+        try {
+            await navigator.clipboard.writeText(textToCopy);
+            console.log('リンクをコピーしました！');
+        } catch (err) {
+            console.error('リンクのコピーに失敗しました', err);
+        }
+    }
+    
+
 
     const renderModalContent = () => {
         if(!selectedWork) return null;
@@ -96,8 +109,9 @@ const WorkbookDisplay = ({workbooks,auth,flash}:WorkbookArray & Workbooks & Publ
                 i={i}
                 id={0}
                 workbook_id='null'
-                publicate={workbook.is_public ? '非公開にする' : '公開する'}
+                publicate={workbook.is_public ? '非公開にする' : 'このアプリに公開する'}
                 publicateClick={()=>handlePublicateClick(workbook)}
+                getLinkClick={()=>handleGetLinkClick(workbook)}
                 value={workbook.title}/>
                 
                {showModal && (

@@ -30,6 +30,9 @@ class Workbook extends Model
         return $this->hasMany(Result::class,'workbook_id','workbook_id');
     }
 
+    public function protected_result(){
+        return $this->hasMany(ProtectedResult::class,'workbook_id','workbook_id');
+    }
 
 
     public function user(){
