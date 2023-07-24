@@ -1,5 +1,6 @@
 import BasicLayout from '@/Layouts/BasicLayout';
 import { Workbooks } from '@/types/workbooks';
+import { Link } from '@inertiajs/react';
 
 const Terms = () =>{
     return(
@@ -39,7 +40,13 @@ const Terms = () =>{
                 <div>4.1 本サービスに関する著作権、商標権、特許権、その他の知的財産権は、本サービスの運営者または適切な権限者に帰属します。利用者は、本サービスを通じて提供されるコンテンツを、個人的な非商業目的で利用することができます。本サービス上のコンテンツの複製、再配布、改変、商業利用等は、運営者または権利者の事前の書面による許可がない限り禁止されます。</div>
 
                 <div className='m-2'>5. 個人情報の取り扱い</div>
-                <div>5.1 本サービスの利用において、利用者の個人情報はプライバシーポリシーに従って取り扱われます。利用者は、プライバシーポリシーを確認し、同意するものとします。</div>
+                <div>5.1 本サービスの利用において、利用者の個人情報はプライバシーポリシーに従って取り扱われます。利用者は、プライバシーポリシーを確認し、同意するものとします。
+                    <Link 
+                    style={{color:'blue'}}
+                    href={route('privacy.policy')}>
+                        プライバシーポリシーを開く
+                    </Link>
+                </div>
 
                 <div className='m-2'>6. その他</div>
                 <div>6.1 本規約は、日本法に準拠し解釈されます。</div>

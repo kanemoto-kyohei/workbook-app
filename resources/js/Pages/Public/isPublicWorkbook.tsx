@@ -40,7 +40,7 @@ const WorkbookDisplay = ({workbooks,auth,flash}:WorkbookArray & Workbooks & Publ
 
     async function handleGetLinkClick(workbook:Workbook) {
         // この部分を適切なリンク形式に修正してください。
-        const textToCopy = `http://shareledge-72d491ceb1b6.herokuapp.com/protected/solve/pre/start/${workbook.workbook_id}`;
+        const textToCopy = `https://shareledge-72d491ceb1b6.herokuapp.com/protected/solve/pre/start/${workbook.workbook_id}`;
     
         try {
             await navigator.clipboard.writeText(textToCopy);

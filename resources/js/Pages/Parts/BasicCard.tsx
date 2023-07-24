@@ -37,7 +37,7 @@ export default function BasicCard({value,sub,imgURL}:{value:string,sub?:string,i
         <Typography
         sx={{
         fontFamily:'Kaisei Decol',
-        fontSize:10,
+        fontSize:12,
         fontWeight:'bold',
         color:'#D2B48C'}}>
           {value}

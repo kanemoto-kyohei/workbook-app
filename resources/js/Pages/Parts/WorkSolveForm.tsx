@@ -54,7 +54,6 @@ const WorkSolveForm = ({works,is_public,is_protected}:{is_protected?:boolean} & 
         correctSound.play();
     }else if(i != work.answer && isButtonClick){
         incorrectSound.play();
-        myVoice.play();
     }
     setIsButtonClick(false);
     setShowDescription(true);

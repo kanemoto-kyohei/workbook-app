@@ -32,7 +32,7 @@ Route::get('/policy/terms', function () {
 
 Route::get('/policy/privacy', function () {
     return Inertia::render('Policies/PrivacyPolicy');
-})->middleware(['auth', 'verified'])->name('privacy.policy');
+})->name('privacy.policy');
 
 
 //create
@@ -44,6 +44,7 @@ Route::get('/create/title', function () {
     return Inertia::render('Create/Title');
 })->middleware(['auth', 'verified'])->name('title');
 
+Route::middleware('auth')->group(function(){
 Route::post('/create/title/save', [App\Http\Controllers\UserController::class, 'title_save'])
 ->name('create.title');
 
@@ -65,6 +66,7 @@ Route::get('/work/list/edit/{id}', [App\Http\Controllers\UserController::class, 
 
 Route::post('/work/list/update/{id}', [App\Http\Controllers\UserController::class, 'work_update'])
 ->name('work.update');
+});
 
 Route::get('/work/list/update/add/{workbook_id}', function ($workbook_id) {
     return Inertia::render('Create/WorkAdd', [
@@ -73,6 +75,7 @@ Route::get('/work/list/update/add/{workbook_id}', function ($workbook_id) {
     );
 })->middleware(['auth', 'verified'])->name('work.addmake');
 
+Route::middleware('auth')->group(function(){
 Route::post('/create/work/add/{workbook_id}', [App\Http\Controllers\UserController::class, 'work_add'])
 ->name('work.add');
 
@@ -143,6 +146,7 @@ Route::post('/query/send', [App\Http\Controllers\UserController::class, 'query_s
 Route::get('/how/to/use', function () {
     return Inertia::render('Policies/HowToUse');
 })->name('howtouse');
+});
 
 //protected
 Route::get('/protected/solve/pre/start/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_pre_start']);

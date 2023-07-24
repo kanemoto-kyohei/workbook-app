@@ -131,7 +131,10 @@ export default function StickTypeCard({value,i,id,workbook_id,publicate,onClick,
 
         {value.includes('分析する') && 
         <div>
-          <FastForwardIcon/><TimelineIcon className='mt-5 ml-2'/>
+          <div
+          style={{color:'green'}}>
+          <FastForwardIcon/>
+          グラフを見る</div>
 
         </div>}
 
