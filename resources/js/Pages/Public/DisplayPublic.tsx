@@ -139,7 +139,7 @@ const DisplayPublic = ({workbooks,auth,flash}:Workbooks & {workbooks:Workbook[]}
 
             return (
                 <>
-                  <div className='mb-20 grid col-span-12 col-start-3 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-2'>
+                  <div className='mb-20 grid col-span-12 col-start-3 sm:col-span-6 md:col-span-4 lg:col-span-3'>
                   <div className='mt-2 mb-8'>
                 <PublicDisplayCard
                 name={workbook.user.nickname != null ? 
