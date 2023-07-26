@@ -92,7 +92,8 @@ const WorkSolveForm = ({works,is_public,is_protected}:{is_protected?:boolean} & 
         onTimerFinish = {handleTimerFinish}
         />}
 
-        <div className='mt-5 p-5'>{work.question}</div>
+        <div className='mt-5 p-5'
+        style={{whiteSpace: 'pre-wrap'}}>{work.question}</div>
         {options.map((option,i)=>{
             const styleCorrect = work.answer===i+1 ? true : false;
             const IconComponent = styleCorrect ? LensOutlinedIcon :ClearOutlinedIcon;
@@ -108,7 +109,8 @@ const WorkSolveForm = ({works,is_public,is_protected}:{is_protected?:boolean} & 
                 >
                 {showDescription && <IconComponent />}
 
-                <div>{`${i + 1}:${option}`}</div>
+                <div style={{whiteSpace: 'pre-wrap'}}>
+                    {`${i + 1}:${option}`}</div>
                 </Button>
 
                 

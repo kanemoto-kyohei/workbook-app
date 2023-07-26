@@ -157,7 +157,7 @@ const WorkMakeForm = ({id,workbook_id,question,options,answer,description,time_t
             <div 
             key={index + 1} 
             className="mt-2"
-            style={{fontFamily:'Kaisei Decol'}}
+            style={{fontFamily:'Kaisei Decol',whiteSpace: 'pre-wrap'}}
             >{`${index + 1}つめ`}</div>
             <TextField
                 multiline
