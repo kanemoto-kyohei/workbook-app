@@ -46,6 +46,19 @@ const ProtectedWorkbookPreStart = ({workbook}:Workbook) => {
                 この問題をとく
                 </Button>
             </Link>
+
+            <Link 
+            className="mt-5"
+            href={route('protected.ranking',{workbook_id:workbook.workbook_id})}             
+            ><Button
+            style={{
+                fontSize:25,
+                fontFamily:'Kaisei Decol'}}
+                >
+                ランキングを見る
+                </Button>
+            </Link>
+
             </div>
         </BasicLayout>
     )
