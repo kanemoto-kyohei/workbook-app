@@ -139,7 +139,7 @@ const WorkMakeForm = ({id,workbook_id,question,options,answer,description,time_t
                 setData('question',e.target.value)
                 setisGoodForm(data.question != null && optionArray.length >= 2 && optionArray.every(option => option !== '') && data.answer != null);
             }}
-            style={{borderRadius: '10p', backgroundColor:'#f4eee8'}}
+            style={{borderRadius: '10p', backgroundColor:'#f4eee8',whiteSpace: 'pre-wrap'}}
             required 
             />
 
