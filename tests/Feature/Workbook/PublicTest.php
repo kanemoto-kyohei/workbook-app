@@ -27,6 +27,8 @@ class PublicTest extends TestCase
 
         $is_public = $workbook->is_public;
 
+        $this->actingAs($user)->get('/workbook/public/'. $workbook->workbook_id);
+
         $response = $this->get('/workbook/public/'. $workbook->workbook_id);
         $response->assertStatus(200);
         $this->assertDatabaseHas('workbooks', [

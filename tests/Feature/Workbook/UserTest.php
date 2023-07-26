@@ -89,6 +89,9 @@ public function test_create_successed(): void
     $description = $work->description;
     $time_to_solve = $work->time_to_solve;
 
+    $this->actingAs($user)->get('/create/work/save/'.$work->workbook_id);
+
+
     $response = $this->post('/create/work/save/'.$work->workbook_id, [
         'workbook_id' => $workbook_id,
         'question' => $question,
@@ -120,6 +123,7 @@ public function test_create_successed(): void
     $description = $work->description;
     $time_to_solve = $work->time_to_solve;
 
+    $this->actingAs($user)->get('/create/work/save/complete/'.$work->workbook_id);
 
 
     $response = $this->post('/create/work/save/complete/'.$work->workbook_id, [
@@ -149,6 +153,9 @@ public function test_create_successed(): void
 
     $title = $workbook->title;
 
+    $this->actingAs($user)->get('/workbook/list/edit/'.$work->workbook_id);
+
+
     $response = $this->get('/workbook/list/edit/'.$work->workbook_id, [
         'title' => $title,
     ]
@@ -172,6 +179,8 @@ public function test_edit_work_successed(): void
     $description = $work->description;
     $time_to_solve = $work->time_to_solve;
 
+    $this->actingAs($user)->get('/work/list/update/'.$work->id);
+
     $response = $this->post('/work/list/update/'.$work->id, [
         'workbook_id' => $workbook_id,
         'question' => $question,
@@ -179,6 +188,7 @@ public function test_edit_work_successed(): void
         'time_to_solve' => $time_to_solve
     ]
     );
+
     $response->assertStatus(200);
 
     $this->assertDatabaseHas('works', [
@@ -201,6 +211,8 @@ public function test_add_work_successed(): void
     $description = $work->description;
     $time_to_solve = $work->time_to_solve;
 
+    $this->actingAs($user)->get('/create/work/add/'.$work->workbook_id);
+
     $response = $this->post('/create/work/add/'.$work->workbook_id, [
         'workbook_id' => $workbook_id,
         'question' => $question,
@@ -221,6 +233,10 @@ public function test_add_work_successed(): void
 public function test_work_analysis_successed(): void
 {
 
+    $user = User::factory()->create();
+
+    $this->actingAs($user);
+
     $response = $this->get('/workbook/analyse/list');
     $response->assertStatus(200);
 
@@ -231,6 +247,8 @@ public function test_work_analyse_successed(): void
     $user = User::factory()->create();
     $workbook = Workbook::factory()->create(['user_id'=>$user->id]);
     $work = Work::factory()->create(['workbook_id'=>$workbook->workbook_id]);
+
+    $this->actingAs($user)->get('/workbook/analyse/'.$work->workbook_id);
 
     $response = $this->get('/workbook/analyse/'.$work->workbook_id);
     $response->assertStatus(200);
@@ -243,6 +261,8 @@ public function test_work_start_successed(): void
     $workbook = Workbook::factory()->create(['user_id'=>$user->id]);
     $work = Work::factory()->create(['workbook_id'=>$workbook->workbook_id]);
     $result = Result::factory()->create(['workbook_id'=>$workbook->workbook_id]);
+
+    $this->actingAs($user);
 
     $response = $this->get('/workbook/solve/select/');
     $response->assertStatus(200);
