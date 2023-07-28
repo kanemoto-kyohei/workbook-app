@@ -236,4 +236,10 @@ body {
   .topbar a:active{
     color: #f4eee8;
   }
+
+  .description{
+    font-size: 25px;
+    font-family:'Kaisei Decol';
+    color: #f7c67d;
+  }
   

@@ -8,6 +8,9 @@ import {
   MotionValue
 } from "framer-motion";
 import { Link } from '@inertiajs/react';
+import { Button } from '@mui/material';
+import FastForwardIcon from '@mui/icons-material/FastForward';
+
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -31,7 +34,8 @@ function Image({ id }: { id: number }) {
       </div>
 
       <motion.h2 style={{ y }}>
-      {`##${id} ${comments[id-1]}`}
+      <h3>{`##${id} ${comments[id-1]}`}</h3>
+      <div className='description'>{<a href={route(`howtouse${id}`)}><div className='description'><FastForwardIcon/>説明を見る</div></a>}</div>
       </motion.h2>
       
 
@@ -60,6 +64,14 @@ export default function TopLayoutEm() {
       ))}
 
       <motion.div className="progress" style={{ scaleX }} />
+
+      <footer className="footer">
+        <div>© 2023 ShareLedge. All Rights Reserved.</div>
+        <div className='flex justify-end items-end text-right'>
+        <Link className='ml-5' href={route('terms')}>利用規約</Link>
+        <Link className='ml-5' href={route('privacy.policy')}>プライバシーポリシー</Link>
+        </div>
+      </footer>
     </>
   );
 }

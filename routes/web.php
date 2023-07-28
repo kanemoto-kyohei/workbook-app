@@ -144,9 +144,32 @@ Route::post('/query/send', [App\Http\Controllers\UserController::class, 'query_s
 
 //howtouse
 Route::get('/how/to/use', function () {
-    return Inertia::render('Policies/HowToUse');
+    return Inertia::render('HowTo/HowToUse');
 })->name('howtouse');
 });
+
+Route::get('/how/to/use/5', function () {
+    return Inertia::render('HowTo/HowToUse5');
+})->name('howtouse5');
+
+Route::get('/how/to/use/1', function () {
+    return Inertia::render('HowTo/HowToUse1');
+})->name('howtouse1');
+
+Route::get('/how/to/use/2', function () {
+    return Inertia::render('HowTo/HowToUse2');
+})->name('howtouse2');
+
+Route::get('/how/to/use/3', function () {
+    return Inertia::render('HowTo/HowToUse3');
+})->name('howtouse3');
+
+Route::get('/how/to/use/4', function () {
+    return Inertia::render('HowTo/HowToUse4');
+})->name('howtouse4');
+
+
+
 
 //protected
 Route::get('/protected/solve/pre/start/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_pre_start']);
