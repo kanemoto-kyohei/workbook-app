@@ -183,6 +183,10 @@ Route::post('/protected/solve/result/{workbook_id}', [App\Http\Controllers\Prote
 Route::post('/protected/solve/result/ranking/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_ranking'])
 ->name('protected.ranking');
 
+Route::get('/protected/solve/result/ranking/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_ranking'])
+->name('protected.rankingdisplay');
+
+
 //default
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

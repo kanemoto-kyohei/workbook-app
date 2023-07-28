@@ -49,7 +49,7 @@ const ProtectedWorkbookPreStart = ({workbook}:Workbook) => {
 
             <Link 
             className="mt-5"
-            href={route('protected.ranking',{workbook_id:workbook.workbook_id})}             
+            href={route('protected.rankingdisplay',{workbook_id:workbook.workbook_id})}             
             ><Button
             style={{
                 fontSize:25,
