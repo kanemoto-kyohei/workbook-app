@@ -180,7 +180,7 @@ Route::get('/protected/solve/start/{workbook_id}', [App\Http\Controllers\Protect
 Route::post('/protected/solve/result/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_result'])
 ->name('protected.result');
 
-Route::get('/protected/solve/result/ranking/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_ranking'])
+Route::post('/protected/solve/result/ranking/{workbook_id}', [App\Http\Controllers\ProtectedController::class, 'protected_ranking'])
 ->name('protected.ranking');
 
 //default
